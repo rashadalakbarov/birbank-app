@@ -8,10 +8,10 @@ const theme = createTheme({
           "& .MuiOutlinedInput-root": {
             borderRadius: "8px",
             "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#FF6666", // When hover state
+              borderColor: "var(--theme-color-light)", // When hover state
             },
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "var(--red)", // When focus state
+              borderColor: "var(--theme-color)", // When focus state
               borderWidth: "1px",
             },
           },
@@ -23,7 +23,7 @@ const theme = createTheme({
         root: {
           color: "gray", // Default color
           "&.Mui-focused": {
-            color: "var(--red)", // When focus state
+            color: "var(--theme-color)", // When focus state
           },
         },
       },
@@ -31,9 +31,9 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "red",
+          backgroundColor: "red",  // default color
           "&:hover": {
-            backgroundColor: "var(--red)",
+            backgroundColor: "var(--theme-color-light)",
           },
           textTransform: "none", 
           borderRadius: "8px", 
