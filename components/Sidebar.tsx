@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
-// import Link from 'next/link';
+import Link from 'next/link';
 
 // icons
 import { MdAnalytics, MdAttachMoney, MdDashboard, MdHelpCenter, MdOutlineSettings, MdPeople, MdShoppingBag, MdSupervisedUserCircle, MdWork } from 'react-icons/md';
@@ -78,7 +78,7 @@ const menuItems: MenuItem[] = [
     list: [
       {
         title: "Settings",
-        path: "/dashboard/settings",
+        path: "",
         icon: <MdOutlineSettings />,
         list: [
           {
@@ -90,7 +90,7 @@ const menuItems: MenuItem[] = [
       },
       {
         title: "Help",
-        path: "/dashboard/help",
+        path: "",
         icon: <MdHelpCenter />,
         list: [
           {
@@ -134,32 +134,32 @@ const Sidebar = () => {
           {Array.isArray(item.list) ? (
             item.list?.map((subitem) => (
               <React.Fragment key={subitem.title}>
-                <ListItemButton onClick={() => handleClick(subitem.title)}>
-                    <ListItemIcon>
-                      {subitem.icon}
-                    </ListItemIcon>
-                    <ListItemText primary={subitem.title} />    
-                    {Array.isArray(subitem.list) ? (
-                      open[subitem.title] ? (
-                        <ExpandLess />
-                      ) : (
-                        <ExpandMore />
-                      )
-                    ) : null}     
-                  </ListItemButton>
-  
+                 <Link href={subitem.path || "#"} passHref>
+                  <ListItemButton onClick={() => handleClick(subitem.title)}>
+                      <ListItemIcon>
+                        {subitem.icon}
+                      </ListItemIcon>
+                      <ListItemText primary={subitem.title} />    
+                      {Array.isArray(subitem.list) ? (
+                        open[subitem.title] ? (
+                          <ExpandLess />
+                        ) : (
+                          <ExpandMore />
+                        )
+                      ) : null}     
+                    </ListItemButton>
+                 </Link>  
                 {
                   Array.isArray(subitem.list) && (
                     <Collapse in={open[subitem.title] || false} timeout="auto" unmountOnExit>
                       <List component="div" disablePadding>
                       {subitem.list.map((childrenitem:MenuItem) => (
-                        <ListItemButton
-                          key={childrenitem.title}
-                          sx={{ pl: 4 }}
-                        >
-                          <ListItemIcon>{childrenitem.icon}</ListItemIcon>
-                          <ListItemText primary={childrenitem.title} />
-                        </ListItemButton>
+                        <Link href={childrenitem.path || "#"} key={childrenitem.title}>
+                          <ListItemButton sx={{ pl: 4 }} >
+                            <ListItemIcon>{childrenitem.icon}</ListItemIcon>
+                            <ListItemText primary={childrenitem.title} />
+                          </ListItemButton>
+                        </Link>
                       ))}
                       </List>
                     </Collapse>

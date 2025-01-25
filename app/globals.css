@@ -41,21 +41,6 @@ a {
   margin: 10px 0px;
 }
 
-/* Menu container */
-.menu-container {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 5px 0px;
-  border-radius: 10px;
-}
-
-.menu-container:hover,
-.menu-active {
-  background-color: #2e374a;
-}
-
 /* Navbar container */
 .navbar-container {
   padding: 20px;
