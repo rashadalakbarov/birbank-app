@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   components: {
+    // Input Field
     MuiTextField: {
       styleOverrides: {
         root: {
@@ -28,6 +29,8 @@ const theme = createTheme({
         },
       },
     },
+
+    // Button
     MuiButton: {
       styleOverrides: {
         root: {
@@ -35,10 +38,60 @@ const theme = createTheme({
           "&:hover": {
             backgroundColor: "var(--theme-color-light)",
           },
+          fontSize: "13px",
           textTransform: "none", 
           borderRadius: "8px", 
           padding: "10px 16px",
-          height: "45px"
+          height: "45px",
+          color: "#fff",
+        },
+      },
+    },
+
+    // List Item
+    MuiListSubheader: {
+      styleOverrides: {
+        root: {
+          color: '#fff',
+          fontWeight: 'bold',
+          textTransform: 'uppercase',
+          fontSize:"12px",
+          marginBottom: "0",
+        },
+        sticky: {
+          backgroundColor: '#1565c0', // Background in Sticky Mdde
+        },
+      },
+    },
+
+    MuiListItemIcon: {
+      styleOverrides: {
+        root: {
+          color: '#fff',
+          fontSize: '20px',
+          marginRight: "-15px",
+          '&:hover': {
+            color: '#fff',
+          },
+        },
+      },
+    },
+
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          // Default Settings
+          backgroundColor: 'transparent',
+          '&:hover': {
+            backgroundColor: 'var(--theme-color-light)',
+          },
+          '&.Mui-selected': {
+            backgroundColor: '#1976d2',
+            color: '#fff',
+            '&:hover': {
+              backgroundColor: '#1565c0',
+            },
+          },
         },
       },
     },

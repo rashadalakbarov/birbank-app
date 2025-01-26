@@ -12,7 +12,7 @@ interface DashboardLayoutProps {
 const DashboardLayout = ({children}:DashboardLayoutProps) => {
   return (
     <div className='flex'>
-      <div className='p-5 min-h-screen flex-1' style={{background: "var(--theme-color)"}}>
+      <div className='p-5 min-h-screen flex-1 hidden lg:block' style={{background: "var(--theme-color)"}}>
         <Sidebar/>
       </div>
       <div className='p-5 flex-[4]'>

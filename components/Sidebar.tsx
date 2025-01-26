@@ -112,12 +112,12 @@ const Sidebar = () => {
     setOpen((prev) => ({ ...prev, [key]: !prev[key] }));
   };
   return (
-    <div className='sticky top-10'>
+    <div className='sticky top-10 min-w-max'>
       <div className="flex items-center mb-5 gap-5">
-        <Avatar alt="profile" src={images.noavatar} sx={{width: 45, height: 45}}/>
+        <Avatar alt="profile" src={images.noavatar} sx={{width: 40, height: 40}}/>
         <div className="flex flex-col">
           <span className="font-medium">Rashad Alakbarov</span>
-          <span className="text-xs text-muted">Administrator</span>
+          <span className="text-xs text-muted">Təbriz Fiilialı</span>
         </div>
       </div>
 
@@ -181,14 +181,3 @@ const Sidebar = () => {
 }
 
 export default Sidebar
-
-{/* <ul className='sidebar-list'>
-        {menuItems.map((cat) => (
-          <li key={cat.title}>
-            <span className="list-cat">{cat.title}</span>
-            {cat.list.map((item) => (
-              <MenuLink item={item} key={item.title} />
-            ))}
-          </li>
-        ))}
-      </ul> */}
