@@ -3,6 +3,7 @@ import React from 'react'
 // components
 import Sidebar from '@/components/Sidebar';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 interface DashboardLayoutProps {
     children: React.ReactNode;
@@ -15,8 +16,9 @@ const DashboardLayout = ({children}:DashboardLayoutProps) => {
         <Sidebar/>
       </div>
       <div className='p-5 flex-[4]'>
-        <Navbar/>
+        <Navbar />
         {children}
+        <Footer />
       </div>
     </div>
   )

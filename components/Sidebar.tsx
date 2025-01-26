@@ -4,13 +4,13 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 
 // icons
-import { MdAnalytics, MdAttachMoney, MdDashboard, MdHelpCenter, MdOutlineSettings, MdPeople, MdShoppingBag, MdSupervisedUserCircle, MdWork } from 'react-icons/md';
+import { MdAnalytics, MdAttachMoney, MdDashboard, MdHelpCenter, MdLogout, MdOutlineSettings, MdPeople, MdShoppingBag, MdSupervisedUserCircle, MdWork } from 'react-icons/md';
 
 // image
 import images from '@/constants/image';
 
 // list
-import { Avatar, Collapse, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
+import { Avatar, Button, Collapse, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 interface MenuItem {
@@ -174,6 +174,8 @@ const Sidebar = () => {
           )}
         </List>
       ))}
+
+      <Button variant="text" className='w-full text-white shadow-lg capitalize mt-4'><MdLogout className='mr-1'/> Sistemdən çıxış</Button>
     </div>
   )
 }
